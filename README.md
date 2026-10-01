@@ -48,3 +48,16 @@ Both mirrors exist to work around one thing: the ionemicro.com server
 drops roughly a third of TLS connections. **That is costing real visitors,
 not just app reviewers.** Putting Cloudflare (or any CDN) in front of the
 domain would fix the site itself and make these mirrors unnecessary.
+
+## Status: the fault this worked around is fixed
+
+The site moved to Azure Static Web Apps on 2026-10-01 and the Hostinger
+account was closed. `www.ionemicro.com` has measured clean since, so this
+mirror is no longer load-bearing — it is kept only because IM Approval's
+App Store and Play listings still point at it, and those were submitted
+while the new hosting was hours old.
+
+**To retire it:** repoint the privacy policy and support URLs in both store
+listings at `www.ionemicro.com`, then delete this repo. Until then, a change
+to the policy in `build-pages.js` has to be copied here, because this is
+what the stores fetch.
