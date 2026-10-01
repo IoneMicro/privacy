@@ -1,6 +1,6 @@
 # iOneMicro privacy policy
 
-A single self-contained page, served by GitHub Pages at
+Two self-contained pages, served by GitHub Pages at
 <https://ionemicro.github.io/privacy/>, which is the URL given to Apple and
 Google for the five IoneMax mobile apps.
 
@@ -25,3 +25,26 @@ policy text itself.
 The source of truth is `build-pages.js` in `IoneMicro/iOneMicro-Website`.
 **When the policy changes there, regenerate this page too** — the two stores
 point here, so a stale copy here is the one users and reviewers actually see.
+
+## What is here
+
+| Page | URL | Used as |
+| --- | --- | --- |
+| `index.html` | <https://ionemicro.github.io/privacy/> | App Store / Play privacy policy URL |
+| `support.html` | <https://ionemicro.github.io/privacy/support.html> | App Store support URL |
+
+The support page is a mirror of `contact.html` for the same reason: Apple
+fetches the support URL during review and www.ionemicro.com answered only
+2 of 6 times when it was measured. Its contact form is entirely
+client-side — it composes a `mailto:` link and posts nothing — so it works
+identically here.
+
+`robots.txt` disallows crawling, so these mirrors never compete with
+www.ionemicro.com in search.
+
+## The better fix
+
+Both mirrors exist to work around one thing: the ionemicro.com server
+drops roughly a third of TLS connections. **That is costing real visitors,
+not just app reviewers.** Putting Cloudflare (or any CDN) in front of the
+domain would fix the site itself and make these mirrors unnecessary.
